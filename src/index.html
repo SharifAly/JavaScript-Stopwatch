@@ -18,12 +18,12 @@
       </ul>
     </div>
     <div class="time-container">
-      <div class="time"><span id="minutes">00</span>:<span id="seconds">00</span></div>
+      <div id="display-time">00:00:00</div>
     </div>
     <div class="button-container">
-      <button id="btn-start">Start</button>
-      <button id="btn-stop">Stop</button>
-      <button id="btn-reset">Reset</button>
+      <button onclick="watchStart()">Start</button>
+      <button onclick="watchStop()">Stop</button>
+      <button onclick="watchReset()">Reset</button>
     </div>
   </div>
   <script src="app.js"></script>
