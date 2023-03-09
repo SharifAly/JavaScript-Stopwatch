@@ -1,72 +1,51 @@
-let seconds = document.getElementById("seconds");
-let minutes = document.getElementById("minutes");
-let second = 0;
-let minute = 0;
-const btnStart = document.getElementById("btn-start");
-const btnReset = document.getElementById("btn-reset");
-const btnStop = document.getElementById("btn-Stop");
+window.onload = function () {
+  let seconds = 00;
+  let tens = 00;
+  let appendTens = document.getElementById("tens");
+  let appendSeconds = document.getElementById("seconds");
+  let buttonStart = document.getElementById("button-start");
+  let buttonStop = document.getElementById("button-stop");
+  let buttonReset = document.getElementById("button-reset");
+  let Interval;
 
-// btnStart.addEventListener("click", () => {
-//   let interval = setInterval(() => {
-//     seconds.innerHTML = second++;
-//   }, 1000);
-// });
+  buttonStart.onclick = function () {
+    clearInterval(Interval);
+    Interval = setInterval(startTimer, 10);
+  };
 
-// btnStop.addEventListener("click", () => {
-//   clearInterval(interval);
-// });
+  buttonStop.onclick = function () {
+    clearInterval(Interval);
+  };
 
-let interval = null;
+  buttonReset.onclick = function () {
+    clearInterval(Interval);
+    tens = "00";
+    seconds = "00";
+    appendTens.innerHTML = tens;
+    appendSeconds.innerHTML = seconds;
+  };
 
-// Basic logic
+  function startTimer() {
+    tens++;
 
-function stopWatch() {
-  second++;
-  if (second == 60) {
-    minute++;
+    if (tens <= 9) {
+      appendTens.innerHTML = "0" + tens;
+    }
+
+    if (tens > 9) {
+      appendTens.innerHTML = tens;
+    }
+
+    if (tens > 99) {
+      console.log("seconds");
+      seconds++;
+      appendSeconds.innerHTML = "0" + seconds;
+      tens = 0;
+      appendTens.innerHTML = "0" + 0;
+    }
+
+    if (seconds > 9) {
+      appendSeconds.innerHTML = seconds;
+    }
   }
-}
-
-btnStart.addEventListener("click", stopwatch);
-
-// Interval
-
-function watchStart() {}
-
-// let [seconds, minutes, hours] = [0, 0, 0];
-// let displayTime = document.getElementById("display-time");
-// let timer = null;
-
-// function stopwatch() {
-//   seconds++;
-//   if (seconds == 60) {
-//     seconds = 0;
-//     minutes++;
-//     if (minutes == 60) {
-//       minutes = 0;
-//       hours++;
-//     }
-//   }
-
-//   let h = hours < 10 ? "0" + hours : hours;
-//   let m = minutes < 10 ? "0" + minutes : minutes;
-//   let s = seconds < 10 ? "0" + seconds : seconds;
-
-//   displayTime.innerHTML = h + ":" + m + ":" + s;
-// }
-
-// function watchStart() {
-//   if (timer !== null) {
-//     clearInterval(timer);
-//   }
-//   (timer = setInterval(stopwatch)), 6000;
-// }
-
-// function watchStop() {
-//   clearInterval(timer);
-// }
-
-// function watchReset() {
-//   clearInterval(timer);
-//   displayTime.innerHTML = "00:00:00";
-// }
+};
