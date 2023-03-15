@@ -10,11 +10,12 @@ body {
   align-items: center;
   height: 100vh;
   background-color: orange;
+  text-align: center;
 }
 
 h1 {
   font-size: 3rem;
-  margin: 0 0 5% 20%;
+  margin: 0 0 10% 0;
 }
 
 h2 {
