@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: monospace;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -14,13 +18,19 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 900;
   margin: 0 0 10% 0;
+  color: white;
+  text-shadow: 0 0 1px black;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
+  font-weight: 600;
   margin: 0 0 20% 0;
+  color: white;
+  text-shadow: 0 0 1px black;
 }
 
 p {
@@ -28,6 +38,8 @@ p {
   justify-content: center;
   font-size: 3rem;
   margin: 0 0 10% 0;
+  /* color: white; */
+  text-shadow: 0 0 1px black;
 }
 
 .button-container {

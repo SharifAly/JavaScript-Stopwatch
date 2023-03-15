@@ -36,8 +36,7 @@ window.onload = function () {
       appendTens.innerHTML = tens;
     }
 
-    if (tens > 99) {
-      console.log("seconds");
+    if (tens > 60) {
       seconds++;
       appendSeconds.innerHTML = "0" + seconds;
       tens = 0;
